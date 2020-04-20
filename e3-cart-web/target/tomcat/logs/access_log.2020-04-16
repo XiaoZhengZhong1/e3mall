@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [16/Apr/2020:20:58:07 +0800] "GET /cart/add/1231490.html?num=1 HTTP/1.1" 200 18544 http-bio-8090-exec-3 61303
+0:0:0:0:0:0:0:1 - - [16/Apr/2020:20:59:57 +0800] "GET /images/weixin.png HTTP/1.1" 404 985 http-bio-8090-exec-5 257
+0:0:0:0:0:0:0:1 - - [16/Apr/2020:21:01:36 +0800] "GET /cart/cart.html HTTP/1.1" 200 25114 http-bio-8090-exec-7 83439
+0:0:0:0:0:0:0:1 - - [16/Apr/2020:21:02:30 +0800] "GET /images/weixin.png HTTP/1.1" 404 985 http-bio-8090-exec-10 6

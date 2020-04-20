@@ -1,0 +1,43 @@
+package cn.e3mall.service.imp;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cn.e3mall.mapper.TbItemMapper;
+import cn.e3mall.pojo.TbItem;
+import cn.e3mall.pojo.TbItemExample;
+import cn.e3mall.pojo.TbItemExample.Criteria;
+import cn.e3mall.service.ItemService;
+@Service
+public class ItemServiceImpl implements ItemService {
+
+	//商品查询,故居商品id查询,测试框架是否搭建成功
+	//有两种方法可以根据商品id查询商品
+	//方法一
+	@Autowired
+	private TbItemMapper tbItemMapper;
+	@Override
+	public TbItem getItemById(Long itemId) {	
+		//return tbItemMapper.selectByPrimaryKey(itemId);
+	
+		//方法2
+		//创建实例对象
+		TbItemExample example = new TbItemExample();   
+		//给实例对象设置标准条件
+		Criteria criteria = example.createCriteria();
+			criteria.andIdEqualTo(itemId);
+			//根据实例条件查询
+			List<TbItem> list = tbItemMapper.selectByExample(example);
+			//判断返回的集合是否为空
+			if(list != null && list.size() > 0){
+				//获取0索引,也就是第一个商品的信息
+				return list.get(0);
+			}
+		return null;
+	}
+
+	
+	
+}

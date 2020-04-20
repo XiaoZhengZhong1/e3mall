@@ -1,0 +1,8 @@
+package cn.e3mall.service;
+
+import cn.e3mall.pojo.TbItem;
+
+public interface ItemService {
+	//商品查询,故居商品id查询,测试框架是否搭建成功
+	TbItem getItemById(Long itemId);
+}
